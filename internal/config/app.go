@@ -2,6 +2,7 @@ package config
 
 import (
 	"github.com/Pasca11/GoBlogApp/internal/api/server"
+	"github.com/Pasca11/GoBlogApp/internal/pkg/logger"
 	"github.com/ilyakaznacheev/cleanenv"
 	"github.com/joho/godotenv"
 	"os"
@@ -10,8 +11,9 @@ import (
 const envPath = ".env"
 
 type Config struct {
-	App    App
-	Server server.Config
+	App    *App
+	Server *server.Config
+	Logger *logger.Config
 }
 
 type App struct {
